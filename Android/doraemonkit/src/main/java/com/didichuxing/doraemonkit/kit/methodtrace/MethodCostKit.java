@@ -1,14 +1,11 @@
 package com.didichuxing.doraemonkit.kit.methodtrace;
 
 import android.content.Context;
-import android.content.Intent;
 
 import com.didichuxing.doraemonkit.R;
-import com.didichuxing.doraemonkit.constant.BundleKey;
 import com.didichuxing.doraemonkit.constant.FragmentIndex;
+import com.didichuxing.doraemonkit.kit.AbstractKit;
 import com.didichuxing.doraemonkit.kit.Category;
-import com.didichuxing.doraemonkit.kit.IKit;
-import com.didichuxing.doraemonkit.ui.UniversalActivity;
 
 /**
  * ================================================
@@ -19,11 +16,8 @@ import com.didichuxing.doraemonkit.ui.UniversalActivity;
  * 修订历史：
  * ================================================
  */
-public class MethodCostKit implements IKit {
-    @Override
-    public int getCategory() {
-        return Category.PERFORMANCE;
-    }
+public class MethodCostKit extends AbstractKit {
+
 
     @Override
     public int getName() {
@@ -32,19 +26,27 @@ public class MethodCostKit implements IKit {
 
     @Override
     public int getIcon() {
-        return R.drawable.dk_method_cost;
+        return R.mipmap.dk_method_cost;
     }
 
     @Override
     public void onClick(Context context) {
-        Intent intent = new Intent(context, UniversalActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.putExtra(BundleKey.FRAGMENT_INDEX, FragmentIndex.FRAGMENT_METHOD_COST);
-        context.startActivity(intent);
+        startUniversalActivity(context,FragmentIndex.FRAGMENT_METHOD_COST);
+
     }
 
     @Override
     public void onAppInit(Context context) {
 
+    }
+
+    @Override
+    public boolean isInnerKit() {
+        return true;
+    }
+
+    @Override
+    public String innerKitId() {
+        return "dokit_sdk_performance_ck_method_coast";
     }
 }

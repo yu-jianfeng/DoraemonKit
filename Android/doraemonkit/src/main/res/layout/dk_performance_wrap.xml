@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.didichuxing.doraemonkit.ui.realtime.widget.LineChart
+        <com.didichuxing.doraemonkit.kit.performance.widget.LineChart
             android:id="@+id/linechart0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top|right"
             android:padding="10dp"
-            android:src="@drawable/dk_close_white"
+            android:src="@mipmap/dk_close_white"
             android:tag="closeView" />
     </FrameLayout>
 
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.didichuxing.doraemonkit.ui.realtime.widget.LineChart
+        <com.didichuxing.doraemonkit.kit.performance.widget.LineChart
             android:id="@+id/linechart1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top|right"
             android:padding="10dp"
-            android:src="@drawable/dk_close_white"
+            android:src="@mipmap/dk_close_white"
             android:tag="closeView" />
 
     </FrameLayout>
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.didichuxing.doraemonkit.ui.realtime.widget.LineChart
+        <com.didichuxing.doraemonkit.kit.performance.widget.LineChart
             android:id="@+id/linechart2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top|right"
             android:padding="10dp"
-            android:src="@drawable/dk_close_white"
+            android:src="@mipmap/dk_close_white"
             android:tag="closeView" />
 
     </FrameLayout>
@@ -75,7 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.didichuxing.doraemonkit.ui.realtime.widget.LineChart
+        <com.didichuxing.doraemonkit.kit.performance.widget.LineChart
             android:id="@+id/linechart3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top|right"
             android:padding="10dp"
-            android:src="@drawable/dk_close_white"
+            android:src="@mipmap/dk_close_white"
             android:tag="closeView" />
 
     </FrameLayout>

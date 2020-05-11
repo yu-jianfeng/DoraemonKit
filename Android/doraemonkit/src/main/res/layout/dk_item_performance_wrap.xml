@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.didichuxing.doraemonkit.ui.realtime.widget.LineChart
+    <com.didichuxing.doraemonkit.kit.performance.widget.LineChart
         android:id="@+id/linechart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -16,6 +16,6 @@
         android:layout_gravity="top|right"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
-        android:src="@drawable/dk_close_white" />
+        android:src="@mipmap/dk_close_white" />
 </FrameLayout>
 

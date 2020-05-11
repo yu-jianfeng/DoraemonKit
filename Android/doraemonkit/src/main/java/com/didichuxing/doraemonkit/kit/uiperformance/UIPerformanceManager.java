@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+
 import com.blankj.utilcode.util.ActivityUtils;
-import com.didichuxing.doraemonkit.DoraemonKit;
-import com.didichuxing.doraemonkit.core.model.ViewInfo;
+import com.didichuxing.doraemonkit.model.ViewInfo;
+import com.didichuxing.doraemonkit.util.LifecycleListenerUtil;
 import com.didichuxing.doraemonkit.util.LogHelper;
 import com.didichuxing.doraemonkit.util.UIUtils;
 
@@ -20,7 +21,7 @@ import java.util.List;
 /**
  * Created by wanglikun on 2019-06-27
  */
-public class UIPerformanceManager implements DoraemonKit.LifecycleListener {
+public class UIPerformanceManager implements LifecycleListenerUtil.LifecycleListener {
     private static final String TAG = "UIPerformanceManager";
     private Canvas mPerformanceCanvas;
     private List<PerformanceDataListener> mListeners = new ArrayList<>();
@@ -38,15 +39,15 @@ public class UIPerformanceManager implements DoraemonKit.LifecycleListener {
     }
 
     public void start(Context context) {
-        Bitmap canvasBitmap = Bitmap.createBitmap(UIUtils.getWidthPixels(context), UIUtils.getHeightPixels(context), Bitmap.Config.ARGB_8888);
+        Bitmap canvasBitmap = Bitmap.createBitmap(UIUtils.getWidthPixels(), UIUtils.getHeightPixels(), Bitmap.Config.ARGB_8888);
         mPerformanceCanvas = new Canvas(canvasBitmap);
-        DoraemonKit.registerListener(this);
+        LifecycleListenerUtil.registerListener(this);
     }
 
     public void stop() {
         mListeners.clear();
         mPerformanceCanvas = null;
-        DoraemonKit.unRegisterListener(this);
+        LifecycleListenerUtil.unRegisterListener(this);
     }
 
     public List<ViewInfo> getViewInfos(Activity activity) {
@@ -85,7 +86,7 @@ public class UIPerformanceManager implements DoraemonKit.LifecycleListener {
             view.draw(mPerformanceCanvas);
             long endTime = System.nanoTime();
             float time = (endTime - startTime) / 10_000 / 100f;
-            LogHelper.d(TAG, "drawTime: " + time + " ms");
+            //LogHelper.d(TAG, "drawTime: " + time + " ms");
             ViewInfo viewInfo = new ViewInfo(view);
             viewInfo.drawTime = time;
             viewInfo.layerNum = layerNum;

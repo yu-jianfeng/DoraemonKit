@@ -7,15 +7,12 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.blankj.utilcode.util.ActivityUtils;
-import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.ConvertUtils;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.didichuxing.doraemonkit.R;
-import com.didichuxing.doraemonkit.ui.alignruler.AlignLineView;
-import com.didichuxing.doraemonkit.ui.base.AbsDokitView;
-import com.didichuxing.doraemonkit.ui.base.DokitViewLayoutParams;
-import com.didichuxing.doraemonkit.ui.base.DokitViewManager;
-import com.didichuxing.doraemonkit.util.LogHelper;
+import com.didichuxing.doraemonkit.kit.core.AbsDokitView;
+import com.didichuxing.doraemonkit.kit.core.DokitViewLayoutParams;
+import com.didichuxing.doraemonkit.kit.core.DokitViewManager;
 
 /**
  * Created by jintai on 2019/09/26.
@@ -76,12 +73,12 @@ public class AlignRulerLineDokitView extends AbsDokitView implements AlignRulerM
             }
 
             if (ScreenUtils.isPortrait()) {
-                if (y >= getScreenLongSideLength() - BarUtils.getStatusBarHeight() - iconSize) {
-                    y = getScreenLongSideLength() - BarUtils.getStatusBarHeight() - iconSize;
+                if (y >= getScreenLongSideLength() - iconSize) {
+                    y = getScreenLongSideLength() - iconSize;
                 }
             } else {
-                if (y >= getScreenShortSideLength() - BarUtils.getStatusBarHeight() - iconSize) {
-                    y = getScreenShortSideLength() - BarUtils.getStatusBarHeight() - iconSize;
+                if (y >= getScreenShortSideLength() - iconSize) {
+                    y = getScreenShortSideLength() - iconSize;
                 }
             }
 
